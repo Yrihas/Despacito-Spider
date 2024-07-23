@@ -1,0 +1,457 @@
+--[[ by iliketrainsornot ]]--
+
+warn("w h y")
+print("this cancer is made by iliketrainsornot")
+plr = game:GetService("Players").LocalPlayer
+char = plr.Character
+Instance.new("ForceField",char).Visible = false
+hed = char.Head
+torso = char.Torso
+mouse = plr:GetMouse()
+rarm = char["Right Arm"]
+larm = char["Left Arm"]
+rleg = char["Right Leg"]
+lleg = char["Left Leg"]
+rarm.Transparency = 1
+larm.Transparency = 1
+lleg.Transparency = 1
+rleg.Transparency = 1
+torso.Transparency = 1
+activ = false
+sound = false
+Create = LoadLibrary("RbxUtility").Create
+char.Animate:Destroy()
+hum = char:FindFirstChildOfClass("Humanoid")
+hum.Animator:Destroy()
+hum.MaxHealth = math.huge
+hum.Health = math.huge
+hum.Name = "despacito"
+hum.JumpPower = 125
+hum.WalkSpeed = 65
+for _,c in pairs(char:GetChildren()) do
+	if (c.ClassName == "Shirt" or c.ClassName == "Pants" or c.ClassName == "ShirtGraphic") and c.Name ~= "Cloth" then
+		c:Remove()
+	end 
+end
+hed:FindFirstChildOfClass("SpecialMesh").MeshId = "http://www.roblox.com/asset/?id=1047997"
+hed:FindFirstChildOfClass("SpecialMesh").TextureId = "http://www.roblox.com/asset/?id=1047998"
+hed.face:Destroy()
+hed:FindFirstChildOfClass("SpecialMesh").Scale = Vector3.new(2.5, 2.5, 2.5)
+hed:FindFirstChildOfClass("SpecialMesh").Offset = Vector3.new(0,1.8,0)
+redhead = Instance.new("Part",torso)
+redhead.Size = torso.Size
+redhead.Transparency = 0
+weld = Instance.new("Weld",redhead)
+weld.Part0 = redhead
+weld.Part1 = torso
+weld.C0 = CFrame.Angles(math.rad(-180), math.rad(-90), math.rad(0))
+redhead1 = Instance.new("SpecialMesh",redhead)
+redhead1.MeshId = hed:FindFirstChildOfClass("SpecialMesh").MeshId
+redhead1.Scale = Vector3.new(2.85,2.85,2.85)
+redhead1.TextureId = "http://www.roblox.com/asset/?id=1047998"
+redhead.CanCollide = false
+redhead1.Offset = Vector3.new(0,0.3,0)
+redhead1.VertexColor = Vector3.new(255,0,0)
+redhead = Instance.new("Part",rleg)
+redhead.Size = rleg.Size
+weld = Instance.new("Weld",redhead)
+weld.Part0 = redhead
+weld.Part1 = torso
+weld.C0 = CFrame.Angles(math.rad(90), math.rad(0), math.rad(0))
+redhead1 = Instance.new("SpecialMesh",redhead)
+redhead1.MeshId = "rbxassetid://696339842"
+redhead1.Scale = Vector3.new(1.3, 1.6, 0.8)
+redhead.CanCollide = false
+redhead1.Offset = Vector3.new(0, 0, -2.1)
+redhead1.VertexColor = Vector3.new(0,0,0)
+redhead2 = Instance.new("Decal", redhead)
+redhead2.Color3 = Color3.fromRGB(0,0,0)
+redhead2.Texture = "rbxassetid://696339520"
+despacitotext = Instance.new("Part",hed)
+despacitotext.Name = "despacito"
+despacitotext.Size = Vector3.new(6.5,3,5.5)
+despacitotext.Transparency = 1
+despacitotext.CanCollide = false
+weld = Instance.new("Weld",redhead)
+weld.Part0 = despacitotext
+weld.Part1 = hed
+surfacegui = Instance.new("SurfaceGui",despacitotext)
+text = Instance.new("TextLabel",surfacegui)
+text.Size = UDim2.new(1,0,1,0)
+text.TextSize = 150
+text.Font = Enum.Font.Legacy
+text.BackgroundTransparency = 1
+surfacegui.AlwaysOnTop = true
+text.TextStrokeColor3 = Color3.fromRGB(255,0,0)
+text.TextStrokeTransparency = 0
+text.TextColor3 = Color3.fromRGB(0,0,0)
+text.Text = "despacito"
+despacito = Instance.new("Sound",char)
+despacito.SoundId = "rbxassetid://1345639272"
+despacito.Volume = 10
+despacito.EmitterSize = 100
+despacito:Play()
+despacito.Name = "despacito"
+local seffect = Instance.new("ReverbSoundEffect",despacito)
+char.ChildRemoved:connect(function(h)
+if h == despacito then
+	despacito = Instance.new("Sound",char)
+despacito.SoundId = "rbxassetid://1345639272"
+despacito.Volume = 10
+despacito.EmitterSize = 100
+despacito:Play()
+despacito.Name = "despacito"
+despacito.TimePosition = despacito.TimePosition
+local seffect = Instance.new("ReverbSoundEffect",despacito)
+end
+end)
+function RemoveOutlines(part)
+	part.TopSurface, part.BottomSurface, part.LeftSurface, part.RightSurface, part.FrontSurface, part.BackSurface = 10, 10, 10, 10, 10, 10
+end
+CFuncs = {
+	Part = {
+		Create = function(Parent, Material, Reflectance, Transparency, BColor, Name, Size)
+			local Part = Create("Part")({
+				Parent = Parent,
+				Reflectance = Reflectance,
+				Transparency = Transparency,
+				CanCollide = false,
+				Locked = true,
+				BrickColor = BrickColor.new(tostring(BColor)),
+				Name = Name,
+				Size = Size,
+				Material = Material
+			})
+			RemoveOutlines(Part)
+			if Size == Vector3.new() then
+				Part.Size = Vector3.new(0.2, 0.2, 0.2)
+			else
+				Part.Size = Size
+			end
+			return Part
+		end
+	},
+	Mesh = {
+		Create = function(Mesh, Part, MeshType, MeshId, OffSet, Scale)
+			local Msh = Create(Mesh)({
+				Parent = Part,
+				Offset = OffSet,
+				Scale = Scale
+			})
+			if Mesh == "SpecialMesh" then
+				Msh.MeshType = MeshType
+				Msh.MeshId = MeshId
+			end
+			return Msh
+		end
+	},
+	Weld = {
+		Create = function(Parent, Part0, Part1, C0, C1)
+			local Weld = Create("Weld")({
+				Parent = Parent,
+				Part0 = Part0,
+				Part1 = Part1,
+				C0 = C0,
+				C1 = C1
+			})
+			return Weld
+		end
+	},
+	Sound = {
+		Create = function(id, par, vol, pit)
+			local Sound = Create("Sound")({
+				Volume = vol,
+				Pitch = pit or 1,
+				SoundId = "rbxassetid://" .. id,
+				Parent = par or workspace
+			})
+			Sound:play()
+			return Sound
+		end
+	},
+	Decal = {
+		Create = function(Color, Texture, Transparency, Name, Parent)
+			local Decal = Create("Decal")({
+				Color3 = Color,
+				Texture = "rbxassetid://" .. Texture,
+				Transparency = Transparency,
+				Name = Name,
+				Parent = Parent
+			})
+			return Decal
+		end
+	},
+	BillboardGui = {
+		Create = function(Parent, Image, Position, Size)
+			local BillPar = CFuncs.Part.Create(Parent, "SmoothPlastic", 0, 1, BrickColor.new("Black"), "BillboardGuiPart", Vector3.new(1, 1, 1))
+			BillPar.CFrame = CFrame.new(Position)
+			local Bill = Create("BillboardGui")({
+				Parent = BillPar,
+				Adornee = BillPar,
+				Size = UDim2.new(1, 0, 1, 0),
+				SizeOffset = Vector2.new(Size, Size)
+			})
+			local d = Create("ImageLabel", Bill)({
+				Parent = Bill,
+				BackgroundTransparency = 1,
+				Size = UDim2.new(1, 0, 1, 0),
+				Image = "rbxassetid://" .. Image
+			})
+			return BillPar
+		end
+	},
+	ParticleEmitter = {
+		Create = function(Parent, Color1, Color2, LightEmission, Size, Texture, Transparency, ZOffset, Accel, Drag, LockedToPart, VelocityInheritance, EmissionDirection, Enabled, LifeTime, Rate, Rotation, RotSpeed, Speed, VelocitySpread)
+			local Particle = Create("ParticleEmitter")({
+				Parent = Parent,
+				Color = ColorSequence.new(Color1, Color2),
+				LightEmission = LightEmission,
+				Size = Size,
+				Texture = Texture,
+				Transparency = Transparency,
+				ZOffset = ZOffset,
+				Acceleration = Accel,
+				Drag = Drag,
+				LockedToPart = LockedToPart,
+				VelocityInheritance = VelocityInheritance,
+				EmissionDirection = EmissionDirection,
+				Enabled = Enabled,
+				Lifetime = LifeTime,
+				Rate = Rate,
+				Rotation = Rotation,
+				RotSpeed = RotSpeed,
+				Speed = Speed,
+				VelocitySpread = VelocitySpread
+			})
+			return Particle
+		end
+	},
+	CreateTemplate = {}
+}
+function text(Pos, Text, Time, Color)
+	local Rate = 0.03333333333333333
+	local Pos = Pos or Vector3.new(0, 0, 0)
+	local Text = Text or ""
+	local Time = Time or 2
+	local Color = Color or Color3.new(1, 0, 1)
+	local EffectPart = CFuncs.Part.Create(hed, "SmoothPlastic", 0, 1, BrickColor.new(Color), "Effect", Vector3.new(0, 0, 0))
+	EffectPart.Anchored = true
+	local BillboardGui = Create("BillboardGui")({
+		Size = UDim2.new(3, 0, 3, 0),
+		Adornee = EffectPart,
+		Parent = EffectPart
+	})
+	local TextLabel = Create("TextLabel")({
+		BackgroundTransparency = 1,
+		Size = UDim2.new(1, 0, 1, 0),
+		TextSize = 55,
+		Text = Text,
+		Font = Enum.Font.Cartoon,
+		TextColor3 = Color3.fromRGB(255,255,255),
+		TextScaled = false,
+		Parent = BillboardGui
+	})
+	game.Debris:AddItem(EffectPart, Time)
+	EffectPart.Parent = game:GetService("Workspace")
+	delay(0, function()
+		local Frames = Time / Rate
+		for Frame = 1, Frames do
+			wait(Rate)
+			local Percent = Frame / Frames
+			EffectPart.CFrame = CFrame.new(Pos) + Vector3.new(0, Percent, 0)
+			TextLabel.TextTransparency = Percent
+		end
+		if EffectPart and EffectPart.Parent then
+			EffectPart:Destroy()
+		end
+	end)
+end
+ArtificialHB = Instance.new("BindableEvent", script)
+ArtificialHB.Name = "ArtificialHB"
+
+script:WaitForChild("ArtificialHB")
+Frame_Speed = 1 / 60
+frame = Frame_Speed
+tf = 0
+allowframeloss = false
+tossremainder = false
+lastframe = tick()
+script.ArtificialHB:Fire()
+
+game:GetService("RunService").Heartbeat:connect(function(s, p)
+	tf = tf + s
+	if tf >= frame then
+		if allowframeloss then
+			script.ArtificialHB:Fire()
+			lastframe = tick()
+		else
+			for i = 1, math.floor(tf / frame) do
+				script.ArtificialHB:Fire()
+			end
+		lastframe = tick()
+		end
+		if tossremainder then
+			tf = 0
+		else
+			tf = tf - frame * math.floor(tf / frame)
+		end
+	end
+end)
+
+function CreateSound(ID, PARENT, VOLUME, PITCH)
+	--coroutine.resume(coroutine.create(function()
+		local NEWSOUND = Instance.new("Sound", PARENT)
+		NEWSOUND.Volume = VOLUME
+		NEWSOUND.Pitch = PITCH
+		NEWSOUND.SoundId = "http://www.roblox.com/asset/?id="..ID
+		NEWSOUND:play()
+		game:GetService("Debris"):AddItem(NEWSOUND, 100)
+		return NEWSOUND
+	--end))
+end
+function Swait(NUMBER)
+	if NUMBER == 0 or NUMBER == nil then
+		ArtificialHB.Event:wait()
+	else
+		for i = 1, NUMBER do
+			ArtificialHB.Event:wait()
+		end
+	end
+end
+function itstimetostop()
+	sound = true
+	local snd = Instance.new("Sound",char)
+	snd.SoundId = "rbxassetid://358468903"
+	snd.Volume = 10
+	snd.TimePosition = 0.25
+	snd.EmitterSize = 350
+	snd:Play()
+	text(hed.CFrame * CFrame.new(0, 0, hed.Size.Y / 2).p + Vector3.new(0, 6, 0), "ITS TIME TO STOP", 2, Color3.fromRGB(255,255,255))
+	wait(2)
+	text(hed.CFrame * CFrame.new(0, 0, hed.Size.Y / 2).p + Vector3.new(0, 6, 0), "ITS TIME TO STOP OKAY", 2, Color3.fromRGB(255,255,255))
+	wait(2.6)
+	text(hed.CFrame * CFrame.new(0, 0, hed.Size.Y / 2).p + Vector3.new(0, 6, 0), "NO MORE", 2, Color3.fromRGB(255,255,255))
+	sound = false
+end
+function youbetterstop()
+	sound = true
+	local snd = Instance.new("Sound",char)
+	snd.SoundId = "rbxassetid://1246891273"
+	snd.Volume = 10
+	snd.TimePosition = 1.2
+	snd:Play()
+	snd.EmitterSize = 100
+	text(hed.CFrame * CFrame.new(0, 0, hed.Size.Y / 2).p + Vector3.new(0, 6, 0), "youbetterstop.mp3", 5.2, Color3.fromRGB(255,255,255))
+	wait(5.2)
+	sound = false
+end
+function ecksdee()
+	sound = true
+	local snd = Instance.new("Sound",char)
+	snd.SoundId = "rbxassetid://1486343908"
+	snd.Volume = 10
+	snd:Play()
+	snd.EmitterSize = 150
+	text(hed.CFrame * CFrame.new(0, 0, hed.Size.Y / 2).p + Vector3.new(0, 6, 0), "ecks", 1, Color3.fromRGB(255,255,255))
+	wait(0.95)
+	text(hed.CFrame * CFrame.new(0, 0, hed.Size.Y / 2).p + Vector3.new(0, 6, 0), "dee", 1, Color3.fromRGB(255,255,255))
+	sound = false
+end
+function lukatthisdude()
+	sound = true
+	local snd = Instance.new("Sound",char)
+	snd.SoundId = "rbxassetid://525498255"
+	snd.Volume = 10
+	snd:Play()
+	snd.EmitterSize = 300
+	text(hed.CFrame * CFrame.new(0, 0, hed.Size.Y / 2).p + Vector3.new(0, 6, 0), "lookatthisdude.mp3", 27, Color3.fromRGB(255,255,255))
+	wait(27)
+	sound = false
+end
+function stopdespacito()
+	if despacito.Playing == true then
+		despacito:Pause()
+	elseif despacito.Playing == false then
+		despacito:Play()
+	end
+end
+function bruh()
+	sound = true
+	local snd = Instance.new("Sound",char)
+	snd.SoundId = "rbxassetid://170040190"
+	snd.Volume = 10
+	snd:Play()
+	snd.EmitterSize = 150
+	text(hed.CFrame * CFrame.new(0, 0, hed.Size.Y / 2).p + Vector3.new(0, 6, 0), "bRUH", 1.7, Color3.fromRGB(255,255,255))
+	wait(1.7)
+	sound = false
+end
+SHIELD = false
+function shield()
+	IT = Instance.new
+	VT = Vector3.new
+	RootPart = char.HumanoidRootPart
+	CF = CFrame.new
+	if SHIELD == false then
+		SHIELD = true
+		warn("YO TENGO")
+		coroutine.resume(coroutine.create(function()
+			local yotengo = IT("Part",char)
+			yotengo.Size = VT(5,12,0)
+			yotengo.CFrame = RootPart.CFrame * CF(0,3,-7)
+			yotengo.Anchored = true
+			local mesh = IT("SpecialMesh",yotengo)
+			mesh.MeshType = "FileMesh"
+			mesh.MeshId = "http://www.roblox.com/asset/?id=15158180"
+			mesh.TextureId = "http://www.roblox.com/asset/?id=15158167"
+			mesh.Scale = VT(3,3,3)
+			CreateSound("1236609502", yotengo, 50, 1)
+			local woosh = yotengo.Touched:Connect(function(hit)
+				if hit.Parent.ClassName == "Model" then
+					hit.Parent:BreakJoints()
+					CreateSound("978878312", hit, 2, 1)
+				elseif hit.ClassName == "Part" and hit.Anchored == false then
+					hit:remove()
+				end
+			end)
+			woosh:disconnect()
+			CreateSound("1236609502", yotengo, 50, 1)
+			yotengo.Anchored = false
+			local bv = Instance.new("BodyVelocity") 
+			bv.maxForce = Vector3.new(4e9, 4e9, 4e9)
+			bv.velocity = RootPart.CFrame.lookVector*300
+			bv.Parent = yotengo
+			bv.Name = "speedy"
+			local paw = yotengo.Touched:Connect(function(hit)
+				if hit.Parent.ClassName == "Model" then
+					yotengo:remove()
+					hit.Parent:BreakJoints()
+					wait(0.1)
+					hit.Parent:ClearAllChildren()
+				end
+			end) 
+		end))
+	elseif SHIELD == true then
+		SHIELD = false
+	end
+end
+mouse.KeyDown:connect(function(k)
+	if k == "z" and sound == false then
+		itstimetostop()
+	elseif k == "x" and sound == false then
+		youbetterstop()
+	elseif k == "c" and sound == false then
+		ecksdee()
+	elseif k == "v" and sound == false then
+		lukatthisdude()
+	elseif k == "b" then
+		stopdespacito()
+	elseif k == "n" and sound == false then
+		bruh()
+	elseif k == "q" and sound == true then
+		print("sounds delay resetted!")
+		sound = false
+	elseif k == "f" then
+		shield()
+	end
+end)
